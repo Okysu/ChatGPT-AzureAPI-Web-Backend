@@ -1,27 +1,4 @@
 {
   "builds": [{ "src": "app.js", "use": "@now/node" }],
-  "routes": [{ "src": "(.*)", "dest": "app.js" }],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Real-IP",
-          "value": "$remote_addr"
-        },
-        {
-          "key": "X-Forwarded-For",
-          "value": "$proxy_add_x_forwarded_for"
-        },
-        {
-          "key": "Host",
-          "value": "$http_host"
-        },
-        {
-          "key": "X-Accel-Buffering",
-          "value": "no"
-        }
-      ]
-    }
-  ]
+  "routes": [{ "src": "(.*)", "dest": "app.js" }]
 }
