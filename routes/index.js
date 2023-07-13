@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const { prompts } = require("../utils/prompts");
 
 /* GET prompts.json in public folder. */
 router.get("/prompts", function (req, res, next) {
-  res.sendFile("prompts.json", { root: "public" });
+  res.json(prompts);
 });
 
 /* GET root */
